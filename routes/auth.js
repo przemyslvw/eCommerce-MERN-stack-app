@@ -2,6 +2,7 @@ const express = require("express");
 const User = require("../modules/User");
 const jwt = require("jsonwebtoken");
 const bcryptjs = require("bcryptjs");
+const config = require("config");
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
 
@@ -45,7 +46,22 @@ router.post(
       // zapis  do bazy
       await user.save();
 
-      res.send("send");
+      let payload = {
+        user: {
+          id: user.id
+        }
+      };
+
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        { expiresIn: 3600 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+      //  res.send("send");
     } catch (error) {
       console.log(error.message);
       return res.status(500).json({ msg: "Server error ..." });
