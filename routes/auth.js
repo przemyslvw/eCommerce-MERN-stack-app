@@ -69,4 +69,59 @@ router.post(
   }
 );
 
+router.post(
+  "/login",
+  [
+    check("email", "Email is empty")
+      .not()
+      .isEmpty(),
+    check("password", "Password is empty")
+      .not()
+      .isEmpty()
+  ],
+  async (req, res) => {
+    // obsługa błędów
+    try {
+      const { email, password } = req.body;
+      let user = await User.findOne({ email });
+      const errors = validationResult(req);
+      // warunek jeśli dany email istnieje
+      if (!user) {
+        return res.status(401).json({ msg: "Email not exist" });
+      }
+      // warunek jeśli pola nie wypełnione
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+      }
+
+      let isMatch = await bcryptjs.compare(password, user.password);
+
+      if (!isMatch) {
+        return res.status(401).json({ msg: "Password is invalid" });
+      }
+
+      await user.save();
+
+      let payload = {
+        user: {
+          id: user.id
+        }
+      };
+
+      jwt.sign(
+        payload,
+        config.get("jwtSecret"),
+        { expiresIn: 3600 },
+        (err, token) => {
+          if (err) throw err;
+          res.json({ token });
+        }
+      );
+    } catch (error) {
+      console.log(error.message);
+      return res.status(500).json({ msg: "Server error ..." });
+    }
+  }
+);
+
 module.exports = router;
