@@ -7,7 +7,7 @@ const Login = () => {
       <div className="mt-10 inputs-wrapper">
         <input
           type="text"
-          name="first_name"
+          name="firstName"
           placeholder="E-mail"
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'First Name'"
@@ -16,7 +16,7 @@ const Login = () => {
         />
         <input
           type="password"
-          name="first_name"
+          name="pass"
           placeholder="Password"
           onfocus="this.placeholder = ''"
           onblur="this.placeholder = 'First Name'"
