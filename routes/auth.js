@@ -6,6 +6,13 @@ const config = require("config");
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
 
+const auth = require("../middleware/auth");
+
+router.get("/", auth, async (req, res) => {
+  const user = await User.findById(req.user.id).select("-password");
+  res.json(user);
+});
+
 router.post(
   "/register",
   [
@@ -17,7 +24,7 @@ router.post(
       .isEmpty(),
     check("password", "Password is empty")
       .not()
-      .isEmpty()
+      .isEmail()
   ],
   async (req, res) => {
     // obsługa błędów
@@ -74,7 +81,7 @@ router.post(
   [
     check("email", "Email is empty")
       .not()
-      .isEmpty(),
+      .isEmail(),
     check("password", "Password is empty")
       .not()
       .isEmpty()
