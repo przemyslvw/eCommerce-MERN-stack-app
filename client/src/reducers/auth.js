@@ -1,11 +1,16 @@
-import { USER_CREATE, USER_ERROR, USER_LOGIN } from "../actions/constans";
+import {
+  USER_CREATE,
+  USER_ERROR,
+  USER_LOGIN,
+  USER_LOADED
+} from "../actions/constans";
 
 const initialState = {
   token: localStorage.getItem("token"),
   isLoading: false,
   isAuthenticated: false,
   user: null,
-  error: null
+  error: {}
 };
 
 const auth = (state = initialState, action) => {
@@ -17,7 +22,17 @@ const auth = (state = initialState, action) => {
       return {
         ...state,
         isLoading: true,
-        isAuthenticated: true
+        isAuthenticated: true,
+        error: {}
+      };
+    case USER_LOADED:
+      localStorage.getItem("token");
+      return {
+        ...state,
+        isLoading: false,
+        isAuthenticated: true,
+        user: payload,
+        error: {}
       };
     case USER_ERROR:
       localStorage.removeItem("token");
