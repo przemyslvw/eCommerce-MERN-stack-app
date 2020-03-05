@@ -1,5 +1,17 @@
-import { USER_LOGIN, USER_ERROR, USER_CREATE } from "./constans";
+import { USER_LOGIN, USER_ERROR, USER_CREATE, USER_LOADED } from "./constans";
 import axios from "axios";
+
+export const loadUser = () => async dispatch => {
+  try {
+    const response = await axios.get("http://localhost:5000/api/auth");
+    dispatch({
+      type: USER_LOADED,
+      payload: response.data
+    });
+  } catch (error) {
+    dispatch({ type: USER_ERROR, payload: error });
+  }
+};
 
 export const login = (password, email) => async dispatch => {
   try {
