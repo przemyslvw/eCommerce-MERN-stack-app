@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Landing from "./pages/Landing";
 import { Provider } from "react-redux";
 
@@ -24,6 +25,11 @@ import "./vendors/lightbox/simpleLightbox.css";
 import "./vendors/nice-select/css/nice-select.css";
 import "./vendors/animate-css/animate.css";
 import "./css/style.css";
+import setAutchToken from "./auth/setAuthToken";
+
+if (localStorage.getItem("token")) {
+  setAutchToken(localStorage.getItem("token"));
+}
 
 class App extends Component {
   render() {
