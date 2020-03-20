@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Landing from "./pages/Landing";
@@ -25,32 +25,36 @@ import "./vendors/lightbox/simpleLightbox.css";
 import "./vendors/nice-select/css/nice-select.css";
 import "./vendors/animate-css/animate.css";
 import "./css/style.css";
+
 import setAutchToken from "./auth/setAuthToken";
+import { loadUser } from './actions/auth'
 
 if (localStorage.getItem("token")) {
   setAutchToken(localStorage.getItem("token"));
 }
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/menu" component={Menu} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/book-table" component={BookTable} />
-            <Route exact component={ErrorPage} />
-          </Switch>
-          <Footer />
-        </Router>
-      </Provider>
-    );
-  }
+const App = () => {
+
+  useEffect(() => {
+    store.dispatch(loadUser());
+  },[])
+  return (
+    <Provider store={store}>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/menu" component={Menu} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/book-table" component={BookTable} />
+        <Route exact component={ErrorPage} />
+      </Switch>
+      <Footer />
+    </Router>
+  </Provider>
+  )
 }
 
 export default App;
