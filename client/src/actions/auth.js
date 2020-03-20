@@ -1,7 +1,11 @@
 import { USER_LOGIN, USER_ERROR, USER_CREATE, USER_LOADED } from "./constans";
 import axios from "axios";
+import setAutchToken from "../auth/setAuthToken";
 
 export const loadUser = () => async dispatch => {
+  if (localStorage.getItem('token')){
+    setAutchToken(localStorage.getItem('token'));
+  }
   try {
     const response = await axios.get("http://localhost:5000/api/auth");
     dispatch({
