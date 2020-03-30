@@ -114,8 +114,6 @@ const Footer = () => {
                       className="form-control"
                       name="EMAIL"
                       placeholder="Your email address"
-                      onfocus="this.placeholder = 'Your email address'"
-                      onblur="this.placeholder = 'Your email address'"
                       required=""
                       type="email"
                     />

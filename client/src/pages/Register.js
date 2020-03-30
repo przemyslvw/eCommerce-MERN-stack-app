@@ -9,8 +9,7 @@ const Register = () => {
           type="text"
           name="first_name"
           placeholder="E-mail"
-          onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'First Name'"
+
           required
           className="single-input"
         />
@@ -18,8 +17,7 @@ const Register = () => {
           type="text"
           name="first_name"
           placeholder="Username"
-          onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'First Name'"
+
           required
           className="single-input"
         />
@@ -27,8 +25,7 @@ const Register = () => {
           type="password"
           name="first_name"
           placeholder="Password"
-          onfocus="this.placeholder = ''"
-          onblur="this.placeholder = 'First Name'"
+
           required
           className="single-input"
         />

@@ -53,8 +53,7 @@ const BookTable = () => {
                       id="name"
                       name="name"
                       placeholder="Name"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Name'"
+
                     />
                   </div>
                   <div className="form-group col-md-12">
@@ -64,8 +63,7 @@ const BookTable = () => {
                       id="email"
                       name="email"
                       placeholder="Email Address"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Email Address'"
+
                     />
                   </div>
                   <div className="form-group col-md-12">
@@ -75,8 +73,7 @@ const BookTable = () => {
                       id="subject"
                       name="subject"
                       placeholder="Phone Number"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Phone Number'"
+
                     />
                   </div>
                   <div className="form-group col-md-12">
@@ -97,8 +94,7 @@ const BookTable = () => {
                       id="datepicker"
                       name="text"
                       placeholder="Select Date & Time"
-                      onfocus="this.placeholder = ''"
-                      onblur="this.placeholder = 'Select Date & Time'"
+
                     />
                   </div>
                   <div className="form-group col-md-12">
