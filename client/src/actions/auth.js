@@ -1,4 +1,4 @@
-import { USER_LOGIN, USER_ERROR, USER_CREATE, USER_LOADED } from "./constans";
+import { USER_LOGIN, USER_ERROR, USER_CREATE, USER_LOADED, LOG_OUT } from "./constans";
 import axios from "axios";
 import setAutchToken from "../auth/setAuthToken";
 
@@ -62,3 +62,13 @@ export const registerUser = (username, password, email) => async dispatch => {
     dispatch({ type: USER_ERROR, payload: error });
   }
 };
+
+export const logOut = () => async dispatch => {
+  try {
+      dispatch({
+          type: LOG_OUT
+      });
+  } catch (error) {
+      dispatch({ type: USER_ERROR, payload: error });
+  }
+}
