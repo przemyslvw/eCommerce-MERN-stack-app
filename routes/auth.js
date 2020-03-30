@@ -92,7 +92,7 @@ router.post(
       const errors = validationResult(req);
       // warunek jeśli dany email istnieje
       if (!user) {
-        return res.status(401).json({ msg: "Email not exist" });
+        return res.status(404).json({ msg: "Email not exist" });
       }
       // warunek jeśli pola nie wypełnione
       if (!errors.isEmpty()) {
