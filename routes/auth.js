@@ -9,7 +9,7 @@ const router = express.Router();
 const auth = require("../middleware/auth");
 
 router.get("/", auth, async (req, res) => {
-  const user = await User.findById(req.user.id).select("-password");
+  const user = await User.findById(req.user._id).select("-password");
   res.json(user);
 });
 
@@ -19,12 +19,11 @@ router.post(
     check("username", "Username is empty")
       .not()
       .isEmpty(),
-    check("email", "Email is empty")
-      .not()
-      .isEmpty(),
+    check("email", "Email rejection")
+      .isEmail(),
     check("password", "Password is empty")
       .not()
-      .isEmail()
+      .isEmpty(),
   ],
   async (req, res) => {
     // obsługa błędów
@@ -55,7 +54,7 @@ router.post(
 
       let payload = {
         user: {
-          id: user.id
+          _id: user._id
         }
       };
 
@@ -111,7 +110,7 @@ router.post(
 
       let payload = {
         user: {
-          id: user.id
+          _id: user._id
         }
       };
 
