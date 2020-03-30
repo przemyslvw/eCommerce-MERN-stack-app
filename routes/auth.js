@@ -28,7 +28,7 @@ router.post(
   async (req, res) => {
     // obsługa błędów
     try {
-      const { username, email, password } = req.body;
+      const { username, password, email } = req.body;
       let user = await User.findOne({ email });
       const errors = validationResult(req);
       // warunek jeśli dany email istnieje
@@ -41,9 +41,9 @@ router.post(
       }
       // tworzenie nowego użytkownika
       user = new User({
-        email,
+        username,
         password,
-        username
+        email
       });
       // szyfrowanie hasła
       let salt = await bcryptjs.genSalt(5);

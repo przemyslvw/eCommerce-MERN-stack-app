@@ -1,42 +1,47 @@
-import React from "react";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { registerUser } from '../actions/auth';
 
-const Register = () => {
-  return (
-    <div className="page-wrapper">
-      <header>Register</header>
-      <div className="mt-10 inputs-wrapper">
-        <input
-          type="text"
-          name="first_name"
-          placeholder="E-mail"
+const Register = ({ registerUser }) => {
 
-          required
-          className="single-input"
-        />
-        <input
-          type="text"
-          name="first_name"
-          placeholder="Username"
+    const [ data,setData ] = useState({
+        email: '',
+        username: '',
+        password: ''
+    });
 
-          required
-          className="single-input"
-        />
-        <input
-          type="password"
-          name="first_name"
-          placeholder="Password"
+    const { username,password,email } = data;
 
-          required
-          className="single-input"
-        />
-      </div>
-      <div>
-        <a href="#" className="genric-btn success">
-          Submit
-        </a>
-      </div>
-    </div>
-  );
-};
+    const onChange = e => {
+        setData({...data, [e.target.name]: e.target.value});
+    }
 
-export default Register;
+    const onSubmit = e => {
+        registerUser(username,password,email);
+    }
+
+    return (
+        <div className="page-wrapper">
+            <header>
+            Register
+            </header>
+	        <div className="mt-10 inputs-wrapper">
+				<input type="text" placeholder="E-mail" onChange={(e) => onChange(e)} value={ email } name="email"
+				required className="single-input"/>
+                <input type="text" name="username" onChange={(e) => onChange(e)} value={ username }  placeholder="Username"
+				required className="single-input"/>
+                <input type="password" name="password" onChange={(e) => onChange(e)} value={ password }  placeholder="Password"
+				required className="single-input"/>
+			</div>
+            <div onClick={() => onSubmit()}>
+                <a href="#" className="genric-btn success">Submit</a>
+            </div>
+        </div>
+    )
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps,{ registerUser })(Register);
