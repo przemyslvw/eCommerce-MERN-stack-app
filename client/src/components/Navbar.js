@@ -13,49 +13,49 @@ import navicon8 from "../img/header/navIcon8.png";
 const Navbar = () => {
   return (
     <header className="fixed-menu">
-      <span class="menu-close">
-        <i class="fa fa-times"></i>
+      <span className="menu-close">
+        <i className="fa fa-times"></i>
       </span>
-      <div class="menu-header">
-        <div class="logo d-flex justify-content-center">
+      <div className="menu-header">
+        <div className="logo d-flex justify-content-center">
           <img src={logo} alt="" />
         </div>
       </div>
-      <div class="nav-wraper">
-        <div class="navbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">
+      <div className="nav-wraper">
+        <div className="navbar">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link active" href="index.html">
                 <img src={navicon1} alt="" /> home
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about-us.html">
+            <li className="nav-item">
+              <a className="nav-link" href="about-us.html">
                 <img src={navicon2} alt="" />
                 about
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="menu.html">
+            <li className="nav-item">
+              <a className="nav-link" href="menu.html">
                 <img src={navicon3} alt="" />
                 menu
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="book-table.html">
+            <li className="nav-item">
+              <a className="nav-link" href="book-table.html">
                 <img src={navicon4} alt="" />
                 Book Table
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Chefs.html">
+            <li className="nav-item">
+              <a className="nav-link" href="Chefs.html">
                 <img src={navicon5} alt="" />
                 Chefs
               </a>
             </li>
-            <li class="nav-item submenu dropdown">
+            <li className="nav-item submenu dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 data-toggle="dropdown"
                 role="button"
@@ -65,18 +65,18 @@ const Navbar = () => {
                 <img src={navicon6} alt="" />
                 Pages
               </a>
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="elements.html">
+              <ul className="dropdown-menu">
+                <li className="nav-item">
+                  <a className="nav-link" href="elements.html">
                     element
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item submenu dropdown">
+            <li className="nav-item submenu dropdown">
               <a
                 href="#"
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 data-toggle="dropdown"
                 role="button"
                 aria-haspopup="true"
@@ -85,21 +85,21 @@ const Navbar = () => {
                 <img src={navicon7} alt="" />
                 Blog
               </a>
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.html">
+              <ul className="dropdown-menu">
+                <li className="nav-item">
+                  <a className="nav-link" href="blog.html">
                     Blog
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="single-blog.html">
+                <li className="nav-item">
+                  <a className="nav-link" href="single-blog.html">
                     Blog Details
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">
+            <li className="nav-item">
+              <a className="nav-link" href="contact.html">
                 <img src={navicon8} alt="" />
                 contact
               </a>

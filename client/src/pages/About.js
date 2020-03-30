@@ -11,19 +11,19 @@ import food8 from "../img/food/food8.jpg";
 
 const About = () => {
   return (
-    <div class="site-main">
-      <section class="home_banner_area common-banner">
-        <div class="banner_inner">
-          <div class="container-fluid no-padding">
-            <div class="row fullscreen"></div>
+    <div className="site-main">
+      <section className="home_banner_area common-banner">
+        <div className="banner_inner">
+          <div className="container-fluid no-padding">
+            <div className="row fullscreen"></div>
           </div>
         </div>
       </section>
-      <div class="row banner-bottom common-bottom-banner align-items-center justify-content-center">
-        <div class="col-lg-8 offset-lg-4">
-          <div class="banner_content">
-            <div class="row d-flex align-items-center">
-              <div class="col-lg-7 col-md-12">
+      <div className="row banner-bottom common-bottom-banner align-items-center justify-content-center">
+        <div className="col-lg-8 offset-lg-4">
+          <div className="banner_content">
+            <div className="row d-flex align-items-center">
+              <div className="col-lg-7 col-md-12">
                 <h1>About Us</h1>
                 <p>
                   inappropriate behavior is often laughed off as “boys will be
@@ -31,9 +31,9 @@ const About = () => {
                   workplace. That’s why it’s crucial that, as women.
                 </p>
               </div>
-              <div class="col-lg-5 col-md-12">
-                <div class="page-link-wrap">
-                  <div class="page_link">
+              <div className="col-lg-5 col-md-12">
+                <div className="page-link-wrap">
+                  <div className="page_link">
                     <a href="index.html">Home</a>
                     <a href="about-us.html">About Us</a>
                   </div>
@@ -43,11 +43,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div class="breakfast-area section_gap_top">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-lg-5">
-              <div class="left-content">
+      <div className="breakfast-area section_gap_top">
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-5">
+              <div className="left-content">
                 <h1>Daily Food Courses with Drinks </h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -60,61 +60,61 @@ const About = () => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation.
                 </p>
-                <a href="#" class="primary-btn">
+                <a href="#" className="primary-btn">
                   See Full Menu
                 </a>
               </div>
             </div>
-            <div class="col-lg-6 offset-lg-1">
-              <div class="right-img">
-                <img class="img1 img-fluid" src={food1} alt="" />
-                <img class="img2 img-fluid" src={food2} alt="" />
+            <div className="col-lg-6 offset-lg-1">
+              <div className="right-img">
+                <img className="img1 img-fluid" src={food1} alt="" />
+                <img className="img2 img-fluid" src={food2} alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <section class="section_gap_top food-gallery-area">
-        <div class="container-fluid no-padding">
-          <div class="row owl-carousel active-food-gallery">
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food5} alt="" />
+      <section className="section_gap_top food-gallery-area">
+        <div className="container-fluid no-padding">
+          <div className="row owl-carousel active-food-gallery">
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food5} alt="" />
             </div>
 
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food6} alt="" />
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food6} alt="" />
             </div>
 
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food7} alt="" />
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food7} alt="" />
             </div>
 
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food8} alt="" />
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food8} alt="" />
             </div>
 
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food6} alt="" />
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food6} alt="" />
             </div>
 
-            <div class="single-gallery-item">
-              <img class="img-fluid" src={food8} alt="" />
+            <div className="single-gallery-item">
+              <img className="img-fluid" src={food8} alt="" />
             </div>
           </div>
         </div>
       </section>
 
-      <div class="breakfast-area lunch-area section_gap">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-lg-6 ">
-              <div class="right-img">
-                <img class="img1 img-fluid" src={food3} alt="" />
-                <img class="img2 img-fluid" src={food4} alt="" />
+      <div className="breakfast-area lunch-area section_gap">
+        <div className="container">
+          <div className="row align-items-center justify-content-center">
+            <div className="col-lg-6 ">
+              <div className="right-img">
+                <img className="img1 img-fluid" src={food3} alt="" />
+                <img className="img2 img-fluid" src={food4} alt="" />
               </div>
             </div>
-            <div class="col-lg-5 offset-lg-1">
-              <div class="left-content">
+            <div className="col-lg-5 offset-lg-1">
+              <div className="left-content">
                 <h1>Daily Food Courses with Drinks </h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -127,11 +127,11 @@ const About = () => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation.
                 </p>
-                <div class="chef-title">
-                  <div class="thumb">
+                <div className="chef-title">
+                  <div className="thumb">
                     <img src="img/about-author.png" alt="" />
                   </div>
-                  <div class="c-desc">
+                  <div className="c-desc">
                     <h6>Marvel Maison</h6>
                     <p>Chief Executive, Amazon</p>
                   </div>
@@ -142,11 +142,11 @@ const About = () => {
         </div>
       </div>
 
-      <section class="brands-area section_gap_bottom">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-7">
-              <div class="main_title">
+      <section className="brands-area section_gap_bottom">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-7">
+              <div className="main_title">
                 <h1>In associasion with</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
@@ -157,41 +157,41 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="owl-carousel brand-carousel">
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+          <div className="row justify-content-center">
+            <div className="col-lg-10">
+              <div className="owl-carousel brand-carousel">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo1.png" alt="" />
                   </div>
                 </div>
 
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo2.png" alt="" />
                   </div>
                 </div>
 
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo3.png" alt="" />
                   </div>
                 </div>
 
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo4.png" alt="" />
                   </div>
                 </div>
 
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo5.png" alt="" />
                   </div>
                 </div>
 
-                <div class="single-brand-item d-table">
-                  <div class="d-table-cell">
+                <div className="single-brand-item d-table">
+                  <div className="d-table-cell">
                     <img src="img/brands/logo3.png" alt="" />
                   </div>
                 </div>

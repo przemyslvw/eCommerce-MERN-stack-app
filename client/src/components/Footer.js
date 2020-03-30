@@ -2,15 +2,15 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer-area overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="single-footer-widget">
+    <footer className="footer-area overlay">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-2 col-md-4 col-sm-6">
+            <div className="single-footer-widget">
               <h6>Top Products</h6>
-              <div class="row">
-                <div class="col">
-                  <ul class="list">
+              <div className="row">
+                <div className="col">
+                  <ul className="list">
                     <li>
                       <a href="#">Managed Website</a>
                     </li>
@@ -28,12 +28,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="single-footer-widget">
+          <div className="col-lg-2 col-md-4 col-sm-6">
+            <div className="single-footer-widget">
               <h6>Quick Links</h6>
-              <div class="row">
-                <div class="col">
-                  <ul class="list">
+              <div className="row">
+                <div className="col">
+                  <ul className="list">
                     <li>
                       <a href="#">Jobs</a>
                     </li>
@@ -51,12 +51,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="single-footer-widget">
+          <div className="col-lg-2 col-md-4 col-sm-6">
+            <div className="single-footer-widget">
               <h6>Features</h6>
-              <div class="row">
-                <div class="col">
-                  <ul class="list">
+              <div className="row">
+                <div className="col">
+                  <ul className="list">
                     <li>
                       <a href="#">Jobs</a>
                     </li>
@@ -74,12 +74,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="col-lg-2 col-md-4 col-sm-6">
-            <div class="single-footer-widget">
+          <div className="col-lg-2 col-md-4 col-sm-6">
+            <div className="single-footer-widget">
               <h6>Resources</h6>
-              <div class="row">
-                <div class="col">
-                  <ul class="list">
+              <div className="row">
+                <div className="col">
+                  <ul className="list">
                     <li>
                       <a href="#">Guides</a>
                     </li>
@@ -97,21 +97,21 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 col-sm-8">
-            <div class="single-footer-widget">
+          <div className="col-lg-4 col-md-6 col-sm-8">
+            <div className="single-footer-widget">
               <h6>Newsletter</h6>
               <p>Stay update with our latest</p>
-              <div class="" id="mc_embed_signup">
+              <div className="" id="mc_embed_signup">
                 <form
                   target="_blank"
                   novalidate="true"
                   action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
                   method="get"
-                  class="form-inline"
+                  className="form-inline"
                 >
-                  <div class="d-flex flex-row">
+                  <div className="d-flex flex-row">
                     <input
-                      class="form-control"
+                      className="form-control"
                       name="EMAIL"
                       placeholder="Your email address"
                       onfocus="this.placeholder = 'Your email address'"
@@ -119,8 +119,8 @@ const Footer = () => {
                       required=""
                       type="email"
                     />
-                    <button class="click-btn btn btn-default">
-                      <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                    <button className="click-btn btn btn-default">
+                      <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
                     </button>
                     <div
                       style={{
@@ -135,37 +135,37 @@ const Footer = () => {
                       />
                     </div>
                   </div>
-                  <div class="info"></div>
+                  <div className="info"></div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-        <div class="row footer-bottom justify-content-between">
-          <div class="col-lg-6">
-            <p class="footer-text m-0">
+        <div className="row footer-bottom justify-content-between">
+          <div className="col-lg-6">
+            <p className="footer-text m-0">
               Copyright &copy;
               <script>document.write(new Date().getFullYear());</script> All
               rights reserved | This template is made with{" "}
-              <i class="fa fa-heart-o" aria-hidden="true"></i> by{" "}
+              <i className="fa fa-heart-o" aria-hidden="true"></i> by{" "}
               <a href="https://colorlib.com" target="_blank">
                 Colorlib
               </a>
             </p>
           </div>
-          <div class="col-lg-2">
-            <div class="social-icons">
+          <div className="col-lg-2">
+            <div className="social-icons">
               <a href="#">
-                <i class="fa fa-facebook"></i>
+                <i className="fa fa-facebook"></i>
               </a>
               <a href="#">
-                <i class="fa fa-twitter"></i>
+                <i className="fa fa-twitter"></i>
               </a>
               <a href="#">
-                <i class="fa fa-dribbble"></i>
+                <i className="fa fa-dribbble"></i>
               </a>
               <a href="#">
-                <i class="fa fa-behance"></i>
+                <i className="fa fa-behance"></i>
               </a>
             </div>
           </div>
