@@ -78,8 +78,7 @@ router.post(
 router.post(
   "/login",
   [
-    check("email", "Email is empty")
-      .not()
+    check("email", "Email rejection")
       .isEmail(),
     check("password", "Password is empty")
       .not()
