@@ -25,30 +25,30 @@ const Navbar = () => {
         <div className="navbar">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" href="index.html">
+              <a className="nav-link active" href="/">
                 <img src={navicon1} alt="" /> home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="about-us.html">
+              <a className="nav-link" href="about-us">
                 <img src={navicon2} alt="" />
                 about
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="menu.html">
+              <a className="nav-link" href="menu">
                 <img src={navicon3} alt="" />
                 menu
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="book-table.html">
+              <a className="nav-link" href="book-table">
                 <img src={navicon4} alt="" />
                 Book Table
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="Chefs.html">
+              <a className="nav-link" href="Chefs">
                 <img src={navicon5} alt="" />
                 Chefs
               </a>
@@ -67,7 +67,7 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li className="nav-item">
-                  <a className="nav-link" href="elements.html">
+                  <a className="nav-link" href="elements">
                     element
                   </a>
                 </li>
@@ -87,19 +87,19 @@ const Navbar = () => {
               </a>
               <ul className="dropdown-menu">
                 <li className="nav-item">
-                  <a className="nav-link" href="blog.html">
+                  <a className="nav-link" href="blog">
                     Blog
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="single-blog.html">
+                  <a className="nav-link" href="single-blog">
                     Blog Details
                   </a>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="contact.html">
+              <a className="nav-link" href="contact">
                 <img src={navicon8} alt="" />
                 contact
               </a>
