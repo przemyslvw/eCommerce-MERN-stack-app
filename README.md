@@ -1,4 +1,4 @@
-MERS stack app
+MERN stack app
 
 npm install
 npm start
