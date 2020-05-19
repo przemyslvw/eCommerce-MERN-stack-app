@@ -1,4 +1,4 @@
-MERN stack app
+eCommerce MERN stack app
 
 npm install
 npm start
