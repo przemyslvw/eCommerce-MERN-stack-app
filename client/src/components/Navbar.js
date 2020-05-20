@@ -1,4 +1,6 @@
 import React from "react";
+import { logOut } from '../actions/auth';
+import { connect } from 'react-redux';
 
 import logo from "../img/logo.png";
 import navicon1 from "../img/header/navIcon1.png";
@@ -10,7 +12,7 @@ import navicon6 from "../img/header/navIcon6.png";
 import navicon7 from "../img/header/navIcon7.png";
 import navicon8 from "../img/header/navIcon8.png";
 
-const Navbar = () => {
+const Navbar = ({ logOut, auth }) => {
   return (
     <header className="fixed-menu">
       <span className="menu-close">
@@ -47,61 +49,47 @@ const Navbar = () => {
                 Book Table
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" href="Chefs">
-                <img src={navicon5} alt="" />
-                Chefs
-              </a>
-            </li>
-            <li className="nav-item submenu dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
+            <li 
+            
+            style={{
+              display: auth.isAuthenticated ? "none" : "block"
+            }}
+            
+            className="nav-item">
+              <a className="nav-link" href="Register">
                 <img src={navicon6} alt="" />
-                Pages
+                Register
               </a>
-              <ul className="dropdown-menu">
-                <li className="nav-item">
-                  <a className="nav-link" href="elements">
-                    element
-                  </a>
-                </li>
-              </ul>
             </li>
-            <li className="nav-item submenu dropdown">
-              <a
-                href="#"
-                className="nav-link dropdown-toggle"
-                data-toggle="dropdown"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
+
+            <li 
+            
+            style={{
+              display: auth.isAuthenticated ? "none" : "block"
+            }}
+            
+            className="nav-item">
+              <a className="nav-link" href="Login">
                 <img src={navicon7} alt="" />
-                Blog
+                Login
               </a>
-              <ul className="dropdown-menu">
-                <li className="nav-item">
-                  <a className="nav-link" href="blog">
-                    Blog
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="single-blog">
-                    Blog Details
-                  </a>
-                </li>
-              </ul>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="contact">
                 <img src={navicon8} alt="" />
                 contact
+              </a>
+            </li>
+            <li 
+            
+            style={{
+                display: auth.isAuthenticated ? "block" : "none"
+            }}
+            
+            className="nav-item" onClick={() => logOut()}>
+              <a className="nav-link">
+              <img src={navicon5} alt="" />
+                Log Out
               </a>
             </li>
           </ul>
@@ -110,5 +98,8 @@ const Navbar = () => {
     </header>
   );
 };
+const mapStateToProps = state => ({
+  auth: state.auth
+})
 
-export default Navbar;
+export default connect(mapStateToProps, { logOut })(Navbar);
