@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { login } from '../actions/auth';
 
-const Login = ({ login}) => {
+const Login = ({ login, auth }) => {
+
+
     const [ data,setData ] = useState({
         email: '',
         password: ''
@@ -16,6 +19,11 @@ const Login = ({ login}) => {
 
     const onSubmit = () => {
         login(password,email);
+    }
+
+    //Sprawdzanie czy użytkownik jest zalogowany
+    if(auth.isAuthenticated){
+        return <Redirect to="/"/>
     }
 
     return (

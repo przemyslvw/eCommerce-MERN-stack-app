@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUser } from '../actions/auth';
 
-const Register = ({ registerUser }) => {
+const Register = ({ registerUser, auth }) => {
 
     const [ data,setData ] = useState({
         email: '',
@@ -18,6 +19,11 @@ const Register = ({ registerUser }) => {
 
     const onSubmit = e => {
         registerUser(username,password,email);
+    }
+
+    //Sprawdzanie czy użytkownik jest zalogowany
+    if(auth.isAuthenticated){
+        return <Redirect to="/"/>
     }
 
     return (
