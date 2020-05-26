@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { logOut } from '../actions/auth';
 import { connect } from 'react-redux';
 
@@ -79,6 +80,18 @@ const Navbar = ({ logOut, auth }) => {
                 <img src={navicon8} alt="" />
                 contact
               </a>
+            </li>
+            <li 
+            
+            style={{
+                display: auth.isAuthenticated ? "block" : "none"
+            }}
+            
+            className="nav-item">
+              <Link to="/account" className="nav-link">
+                  <img src={navicon6} alt="" />
+                  Account
+              </Link>
             </li>
             <li 
             

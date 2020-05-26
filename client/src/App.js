@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Register from "./pages/Register";
 import BookTable from "./pages/BookTable";
 import Login from "./pages/Login";
+import AccountPage from "./pages/AccountPage";
 import ErrorPage from "./pages/ErrorPage";
 
 import Navbar from "./components/Navbar";
@@ -49,6 +50,7 @@ const App = () => {
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/book-table" component={BookTable} />
+        <Route exact path="/account" component={AccountPage} />
         <Route exact component={ErrorPage} />
       </Switch>
       <Footer />
