@@ -50,8 +50,14 @@ const Navbar = ({ logOut, auth }) => {
                 Book Table
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="contact">
+                <img src={navicon8} alt="" />
+                contact
+              </a>
+            </li>
             <li 
-            
+          
             style={{
               display: auth.isAuthenticated ? "none" : "block"
             }}
@@ -62,7 +68,6 @@ const Navbar = ({ logOut, auth }) => {
                 Register
               </a>
             </li>
-
             <li 
             
             style={{
@@ -73,12 +78,6 @@ const Navbar = ({ logOut, auth }) => {
               <a className="nav-link" href="Login">
                 <img src={navicon7} alt="" />
                 Login
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="contact">
-                <img src={navicon8} alt="" />
-                contact
               </a>
             </li>
             <li 
