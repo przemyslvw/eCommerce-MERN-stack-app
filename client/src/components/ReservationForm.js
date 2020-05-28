@@ -58,7 +58,7 @@ const ReservationForm = () => {
                         </div>
                         <div className="form-group col-md-12">
                             <input
-                            type="text"
+                            type="date"
                             className="form-control"
                             id="datepicker"
                             name="text"
@@ -66,17 +66,7 @@ const ReservationForm = () => {
 
                             />
                         </div>
-                        <div className="form-group col-md-12">
-                            <div className="form-select">
-                            <select>
-                                <option value="1">Select event</option>
-                                <option value="1">Select event Dhaka</option>
-                                <option value="1">Select event Dilli</option>
-                                <option value="1">Select event Newyork</option>
-                                <option value="1">Select event Islamabad</option>
-                            </select>
-                            </div>
-                        </div>
+
                         <div className="col-lg-12 text-center">
                             <button className="primary-btn text-uppercase">
                             Make Reservation

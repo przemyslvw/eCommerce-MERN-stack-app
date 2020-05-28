@@ -14,6 +14,7 @@ app.use(
 );
 
 app.use("/api/auth", require("./routes/auth.js"));
+app.use("/api/booktables", require("./routes/bookTable.js"));
 
 connectToDatabase();
 
