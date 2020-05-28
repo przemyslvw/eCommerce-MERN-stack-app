@@ -21,6 +21,8 @@ import item2 from "../img/chef/item2.png";
 import item3 from "../img/chef/item3.png";
 import item4 from "../img/chef/item4.png";
 
+import ReservationForm from "../components/ReservationForm"
+
 const Landing = () => {
   return (
     <div className="site-main">
@@ -143,6 +145,8 @@ const Landing = () => {
           </div>
         </div>
       </div>
+
+      <ReservationForm />
 
       <div className="chef-area section_gap_top">
         <div className="container">
