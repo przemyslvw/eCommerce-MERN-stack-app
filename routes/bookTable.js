@@ -3,6 +3,26 @@ const BookTable = require('../modules/BookTable');
 const { check,validationResult } = require('express-validator');
 const router = express.Router();
 
+//Pobranie wszystkich booktables
+router.get(
+    '/',
+    async(req,res) => {
+        //Pobranie wszystkich booktables z BookTable Schema
+        const booktables = await BookTable.find();
+        //Wyświetlenie
+        res.json(booktables);
+    }
+);
+
+//Szukanie booktable po id
+router.get(
+    '/booktable/:booktable_id',
+    async(req,res) => {
+        const booktable = await BookTable.findOne({ _id: req.params.booktable_id });
+        res.json(booktable);
+    }
+)
+
 //Tworzenie booktable
 router.post(
     '/',
