@@ -108,4 +108,27 @@ router.put(
     }
 )
 
+//Zmiana ilości produktu
+router.put(
+    //Pobranie id oraz ilości
+    '/changeCount/:id/:new_count',
+    //Sprawdzanie czy użytkownik jest zalogowany, dodanie tokenu
+    auth,
+    async(req,res) => {
+        try {
+            //Szukanie itemu z koszyka po podanym id
+            let basketItem = await BasketItem.findById(req.params.id);
+            //Zmiana ilości
+            basketItem.count = req.params.new_count;
+            //Zapisanie
+            await basketItem.save();
+            //Wyświetlenie
+            res.json(basketItem);
+        } catch (error) {
+            console.log(error.message);
+            return res.status(500).json({ msg: "Server Error..." });
+        }
+    }
+)
+
 module.exports = router;
