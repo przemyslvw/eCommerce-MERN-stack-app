@@ -22,7 +22,7 @@ export const addBookTable = (name, email, phoneNum, people, date) => async dispa
         const res = await axios.post('http://localhost:5000/api/booktables/',body,config);
         dispatch({
             type: ADD_BOOK_TABLE,
-            payload: resizeBy.data
+            payload: res.data
         })
     } catch (error) {
         dispatch({type: ERROR_BOOK_TABLE})
