@@ -11,7 +11,7 @@ export const getBasketItems = () => async dispatch => {
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
-            payload: res.data
+            payload: error
         })
     }
 }
@@ -33,7 +33,7 @@ export const addBasketItems = (name,price,count) => async dispatch => {
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
-            payload: res.data
+            payload: error
         })
     }
 }
@@ -48,7 +48,7 @@ export const removeBasketItems = (item_remove) => async dispatch => {
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
-            payload: res.data
+            payload: error
         })
     }
 }
@@ -63,7 +63,7 @@ export const getSum = () => async dispatch => {
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
-            payload: res.data
+            payload: error
         })
     }
 }
