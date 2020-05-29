@@ -43,4 +43,20 @@ router.post(
     }
 )
 
+router.get (
+    '/',
+    auth,
+    async(req,res) => {
+        try {
+            const basketItems = await BasketItem.find();
+            const output = basketItems.filter(item => item.user_id === req.user._id);
+            res.json(output);
+
+        } catch (error) {
+            console.log(error.message);
+            return res.status(500).json({ msg: "Server Error" });
+        }
+    }
+)
+
 module.exports = router;
