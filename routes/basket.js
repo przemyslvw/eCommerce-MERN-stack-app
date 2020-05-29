@@ -43,15 +43,19 @@ router.post(
     }
 )
 
+//Pobranie produktów użytkownika
 router.get (
     '/',
+    //Sprawdzanie czy użytkownik jest zalogowany, dodanie tokenu
     auth,
     async(req,res) => {
         try {
+            //Pobranie wszystkich danych z BasketItem
             const basketItems = await BasketItem.find();
+            //Szukanie produktów naszego użytkownika
             const output = basketItems.filter(item => item.user_id === req.user._id);
+            //Wyświetlenie ich
             res.json(output);
-
         } catch (error) {
             console.log(error.message);
             return res.status(500).json({ msg: "Server Error" });
