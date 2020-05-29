@@ -1,0 +1,69 @@
+import { GET_SUM, GET_BASKET_ITEMS, REMOVE_BASKET_ITEMS, ADD_BASKET_ITEMS, ERROR_BASKET_ITEMS } from './constans';
+import axios from 'axios';
+
+export const getBasketItems = () => async dispatch => {
+    try {
+        const res = await axios.get('http://localhost:5000/api/basket');
+        dispatch({
+            type: GET_BASKET_ITEMS,
+            payload: res.data
+        })
+    } catch (error) {
+        dispatch({
+            type: ERROR_BASKET_ITEMS,
+            payload: res.data
+        })
+    }
+}
+
+export const addBasketItems = (name,price,count) => async dispatch => {
+    try {
+        const config = {
+            headers: {
+                'Content-Type' : 'aplication/json'
+            }
+        };
+        const body = JSON.stringify({name,price,count});
+        const res = await axios.post(`http://localhost:5000/api/basket/`,body,config);
+        dispatch({
+            type: ADD_BASKET_ITEMS,
+            payload: res.data
+        })
+        dispatch(getBasketItems())
+    } catch (error) {
+        dispatch({
+            type: ERROR_BASKET_ITEMS,
+            payload: res.data
+        })
+    }
+}
+
+export const removeBasketItems = (item_remove) => async dispatch => {
+    try {
+        const res = await axios.delete(`http://localhost:5000/api/basket/${item_remove}`);
+        dispatch({
+            type: REMOVE_BASKET_ITEMS,
+            payload: res.data
+        })
+    } catch (error) {
+        dispatch({
+            type: ERROR_BASKET_ITEMS,
+            payload: res.data
+        })
+    }
+}
+
+export const getSum = () => async dispatch => {
+    try {
+        const res = await axios.put('http://localhost:5000/api/basket/sum_prices');
+        dispatch({
+            type: GET_SUM,
+            payload: res.data
+        })
+    } catch (error) {
+        dispatch({
+            type: ERROR_BASKET_ITEMS,
+            payload: res.data
+        })
+    }
+}
