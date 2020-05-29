@@ -22,3 +22,5 @@ const basketItems = (state = initialState, action) => {
             return state;
     }
 }
+
+export default basketItems;
