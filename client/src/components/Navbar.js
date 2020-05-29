@@ -81,15 +81,25 @@ const Navbar = ({ logOut, auth }) => {
               </a>
             </li>
             <li 
-            
-            style={{
+              style={{
                 display: auth.isAuthenticated ? "block" : "none"
-            }}
-            
-            className="nav-item">
+              }}
+              className="nav-item"
+            >
               <Link to="/account" className="nav-link">
                   <img src={navicon6} alt="" />
                   Account
+              </Link>
+            </li>
+            <li 
+              style={{
+                display: auth.isAuthenticated ? "block" : "none"
+              }}
+              className="nav-item"
+            >
+              <Link to="/basket" className="nav-link">
+                  <img src={navicon3} alt="" />
+                  Basket
               </Link>
             </li>
             <li 

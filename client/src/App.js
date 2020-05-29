@@ -29,6 +29,7 @@ import "./css/style.css";
 
 import setAutchToken from "./auth/setAuthToken";
 import { loadUser } from './actions/auth'
+import Basket from "./pages/Basket";
 
 if (localStorage.getItem("token")) {
   setAutchToken(localStorage.getItem("token"));
@@ -51,6 +52,7 @@ const App = () => {
         <Route exact path="/login" component={Login} />
         <Route exact path="/book-table" component={BookTable} />
         <Route exact path="/account" component={AccountPage} />
+        <Route exact path="/basket" component={Basket} />
         <Route exact component={ErrorPage} />
       </Switch>
       <Footer />
