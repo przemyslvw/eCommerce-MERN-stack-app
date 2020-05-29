@@ -44,7 +44,8 @@ export const removeBasketItems = (item_remove) => async dispatch => {
         dispatch({
             type: REMOVE_BASKET_ITEMS,
             payload: res.data
-        })
+        });
+        dispatch(getBasketItems());
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
@@ -65,5 +66,17 @@ export const getSum = () => async dispatch => {
             type: ERROR_BASKET_ITEMS,
             payload: error
         })
+    }
+}
+
+export const changeCount = (id,new_count) => async dispatch => {
+    try {
+        await axios.put(`http://localhost:5000/api/basket/changeCount/${id}/${new_count}`);
+        dispatch(getBasketItems());
+    } catch (error) {
+        dispatch({
+            type: ERROR_BASKET_ITEMS,
+            payload: error
+        });
     }
 }
