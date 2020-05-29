@@ -59,4 +59,25 @@ router.get (
     }
 )
 
+//Usunięcie produktu
+router.delete(
+    // Podanie id naszego produktu
+    '/:item_remove',
+    //Sprawdzanie czy użytkownik jest zalogowany, dodanie tokenu
+    auth,
+    async(req,res) => {
+        try {
+            //Pobranie wszystkich danych z BasketItem
+            const basketItems = await BasketItem.find();
+            //Usunięcie produktu poprzez podane id
+            await BasketItem.findByIdAndDelete(req.params.item_remove);
+            //Wyświetlenie
+            res.json(basketItems);
+        } catch (error) {
+            console.log(error.message);
+            return res.status(500).json({ msg: "Server Error" });
+        }
+    }
+);
+
 module.exports = router;
