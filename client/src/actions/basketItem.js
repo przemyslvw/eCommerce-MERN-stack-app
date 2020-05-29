@@ -16,25 +16,21 @@ export const getBasketItems = () => async dispatch => {
     }
 }
 
-export const addBasketItems = (name,price,count) => async dispatch => {
+export const addBasketItem = (name,price,count,sku) => async dispatch => {
     try {
         const config = {
             headers: {
-                'Content-Type' : 'aplication/json'
+                'Content-Type': 'application/json'
             }
         };
-        const body = JSON.stringify({name,price,count});
-        const res = await axios.post(`http://localhost:5000/api/basket/`,body,config);
-        dispatch({
-            type: ADD_BASKET_ITEMS,
-            payload: res.data
-        })
-        dispatch(getBasketItems())
+        const body = JSON.stringify({ name,price,count,sku });
+        await axios.post('http://localhost:5000/api/basket',body,config);
+        dispatch(getBasketItems());
     } catch (error) {
         dispatch({
             type: ERROR_BASKET_ITEMS,
             payload: error
-        })
+        });
     }
 }
 
