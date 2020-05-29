@@ -84,4 +84,28 @@ router.delete(
     }
 );
 
+//Sumowanie przedmiotów
+router.put(
+    '/sum_prices',
+    //Sprawdzanie czy użytkownik jest zalogowany, dodanie tokenu
+    auth,
+    async(req,res) => {
+        try {
+            //Ustalenie początkowej sumy
+            let sum = 0;
+            //Pobranie wszystkich danych z BasketItem
+            const basketItems = await BasketItem.find();
+            //Szukanie produktów naszego użytkownika
+            const userBasketItems = basketItems.filter(item => item.user_id === req.user._id);
+            //Sumowanie produktów
+            userBasketItems.map(item => sum += item.price);
+            //Wyświetlenie
+            res.json(sum);
+        } catch (error) {
+            console.log(error.message);
+            return res.status(500).json({ msg: "Server Error" });
+        }
+    }
+)
+
 module.exports = router;
